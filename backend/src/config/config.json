@@ -1,0 +1,7 @@
+{
+  "idealMatchWidgetThreshold": 70,
+  "saleDaysWidgetRegionPostcode": "region",
+  "authSettings": {
+    "resetPasswordTokenLifeSpanHours": 24
+  }
+}

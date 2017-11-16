@@ -1,0 +1,1 @@
+INSERT INTO users (user_key, record_status_key, created_at) VALUES ('t','ACTIVE', NOW());

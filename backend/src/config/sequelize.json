@@ -1,0 +1,40 @@
+{
+    "development": {
+      "username": "rms-inventory",
+      "password": "rms-inventory",
+      "database": "rms-inventory",
+      "host": "localhost",
+      "dialect": "postgres",
+      "logging": false
+    },
+    "test": {
+      "dialect": "sqlite",
+      "storage": ":memory:",
+      "logging": false
+    },
+    "dev-staging": {
+      "username": "proxyuser",
+      "password": "yRCiHMnBkuk)NhBfhXZ9k",
+      "database": "realyeti",
+      "host": "35.189.171.195",
+      "dialect": "postgres",
+      "logging": false
+    },
+    "production": {
+      "username": "cloudproxyprod",
+      "password": "Qav(wzcyWUpfDJTpGmemnTPqPKcRUWPCiiyNvVhHjvPMTrn8WX",
+      "database": "realyetiprod",
+      "host": "35.189.45.17",
+      "dialect": "postgres",
+      "logging": false
+    },
+    "uat": {
+      "username": "proxyuser",
+      "password": "yRCiHMnBkuk)NhBfhXZ9k",
+      "database": "uat",
+      "host": "35.189.171.195",
+      "dialect": "postgres",
+      "logging": false
+    }
+  }
+  

@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+CAUTION: Do not modify this file unless you know what you are doing.
+         Unexpected results may occur if the code is changed deliberately.
+-->
+<dbmodel pgmodeler-ver="0.8.2-beta" last-position="638,44" last-zoom="1"
+	 default-schema="public" default-owner="postgres">
+<database name="new_database">
+</database>
+
+<schema name="public" fill-color="#e1e1e1" sql-disabled="true">
+</schema>
+
+<table name="products">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="308" y="472"/>
+	<column name="product_id" not-null="true">
+		<type name="smallint"/>
+	</column>
+	<column name="product_key" not-null="true">
+		<type name="varchar" length="20"/>
+	</column>
+	<column name="created_at" not-null="true" default-value="NOW()">
+		<type name="timestamp" with-timezone="true"/>
+	</column>
+	<column name="record_status_key">
+		<type name="smallint"/>
+	</column>
+	<constraint name="products_product_id" type="pk-constr" table="public.products">
+		<columns names="product_id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="users">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="614" y="126"/>
+	<column name="user_id" not-null="true">
+		<type name="smallint"/>
+	</column>
+	<column name="user_key" not-null="true">
+		<type name="varchar" length="20"/>
+	</column>
+	<column name="created_at" not-null="true" default-value="NOW()">
+		<type name="timestamp" with-timezone="true"/>
+	</column>
+	<column name="record_status_key">
+		<type name="smallint"/>
+	</column>
+	<constraint name="products_product_id" type="pk-constr" table="public.users">
+		<columns names="user_id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="name_types">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="1330" y="124"/>
+	<column name="name_type_id" not-null="true">
+		<type name="smallint"/>
+	</column>
+	<column name="name_type_key" not-null="true">
+		<type name="varchar" length="20"/>
+	</column>
+	<column name="created_at" not-null="true" default-value="NOW()">
+		<type name="timestamp" with-timezone="true"/>
+	</column>
+	<column name="record_status_key">
+		<type name="smallint"/>
+	</column>
+	<constraint name="products_product_id" type="pk-constr" table="public.name_types">
+		<columns names="name_type_id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="user_names">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="1027" y="123"/>
+	<column name="name_type_key" not-null="true">
+		<type name="varchar" length="20"/>
+	</column>
+	<column name="user_key" not-null="true">
+		<type name="varchar" length="20"/>
+	</column>
+	<column name="created_at" not-null="true" default-value="NOW()">
+		<type name="timestamp" with-timezone="true"/>
+	</column>
+	<column name="first_name">
+		<type name="varchar" length="255"/>
+	</column>
+	<column name="last_name">
+		<type name="varchar" length="255"/>
+	</column>
+	<column name="company_name">
+		<type name="varchar" length="255"/>
+	</column>
+	<column name="record_status_key">
+		<type name="smallint"/>
+	</column>
+	<constraint name="products_product_id" type="pk-constr" table="public.user_names">
+		<columns names="name_type_key" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="contact_types">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="1347" y="268"/>
+	<column name="contact_type_id" not-null="true">
+		<type name="smallint"/>
+	</column>
+	<column name="contact_type_key" not-null="true">
+		<type name="varchar" length="20"/>
+	</column>
+	<column name="created_at" not-null="true" default-value="NOW()">
+		<type name="timestamp" with-timezone="true"/>
+	</column>
+	<column name="record_status_key">
+		<type name="smallint"/>
+	</column>
+	<constraint name="products_product_id" type="pk-constr" table="public.contact_types">
+		<columns names="contact_type_id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="contacts">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="1030" y="266"/>
+	<column name="contact_type_key" not-null="true">
+		<type name="varchar" length="20"/>
+	</column>
+	<column name="user_key" not-null="true">
+		<type name="varchar" length="20"/>
+	</column>
+	<column name="created_at" not-null="true" default-value="NOW()">
+		<type name="timestamp" with-timezone="true"/>
+	</column>
+	<column name="apartment_unit_number">
+		<type name="varchar" length="255"/>
+	</column>
+	<column name="record_status_key">
+		<type name="smallint"/>
+	</column>
+	<constraint name="products_product_id" type="pk-constr" table="public.contacts">
+		<columns names="contact_type_key" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="user_types">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="1364" y="380"/>
+	<column name="user_type_id" not-null="true">
+		<type name="smallint"/>
+	</column>
+	<column name="user_type_key" not-null="true">
+		<type name="varchar" length="20"/>
+	</column>
+	<column name="created_at" not-null="true" default-value="NOW()">
+		<type name="timestamp" with-timezone="true"/>
+	</column>
+	<column name="record_status_key">
+		<type name="smallint"/>
+	</column>
+	<constraint name="products_product_id" type="pk-constr" table="public.user_types">
+		<columns names="user_type_id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="user_types_users">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="1040" y="377"/>
+	<column name="user_types_users_id" not-null="true">
+		<type name="smallint"/>
+	</column>
+	<column name="users_key" not-null="true">
+		<type name="varchar" length="20"/>
+	</column>
+	<column name="created_at" not-null="true" default-value="NOW()">
+		<type name="timestamp" with-timezone="true"/>
+	</column>
+	<column name="user_type_key">
+		<type name="varchar" length="20"/>
+	</column>
+	<column name="record_status_key">
+		<type name="smallint"/>
+	</column>
+	<constraint name="products_product_id" type="pk-constr" table="public.user_types_users">
+		<columns names="user_types_users_id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="record_status">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="1318" y="40"/>
+	<column name="record_status_id" not-null="true">
+		<type name="varchar" length="20"/>
+	</column>
+	<column name="record_status_key" not-null="true">
+		<type name="varchar" length="20"/>
+	</column>
+	<column name="created_at" not-null="true" default-value="NOW()">
+		<type name="timestamp" with-timezone="true"/>
+	</column>
+	<column name="record_status_name">
+		<type name="varchar" length="255"/>
+	</column>
+	<column name="this_record_status_key">
+		<type name="smallint"/>
+	</column>
+	<constraint name="products_product_id" type="pk-constr" table="public.record_status">
+		<columns names="record_status_id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="product_names">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="603" y="365"/>
+	<column name="contact_type_key" not-null="true">
+		<type name="varchar" length="20"/>
+	</column>
+	<column name="user_key" not-null="true">
+		<type name="varchar" length="20"/>
+	</column>
+	<column name="created_at" not-null="true" default-value="NOW()">
+		<type name="timestamp" with-timezone="true"/>
+	</column>
+	<column name="product_key">
+		<type name="varchar" length="255"/>
+	</column>
+	<column name="name_type_key">
+		<type name="varchar" length="255"/>
+	</column>
+	<constraint name="products_product_id" type="pk-constr" table="public.product_names">
+		<columns names="contact_type_key" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="configuration_variables">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="1389" y="616"/>
+	<column name="contact_type_id" not-null="true">
+		<type name="smallint"/>
+	</column>
+	<column name="contact_type_key" not-null="true">
+		<type name="varchar" length="20"/>
+	</column>
+	<column name="created_at" not-null="true" default-value="NOW()">
+		<type name="timestamp" with-timezone="true"/>
+	</column>
+	<column name="record_status_key">
+		<type name="smallint"/>
+	</column>
+	<constraint name="products_product_id" type="pk-constr" table="public.configuration_variables">
+		<columns names="contact_type_id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="configurations">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="1107" y="611"/>
+	<column name="contact_type_id" not-null="true">
+		<type name="smallint"/>
+	</column>
+	<column name="contact_type_key" not-null="true">
+		<type name="varchar" length="20"/>
+	</column>
+	<column name="created_at" not-null="true" default-value="NOW()">
+		<type name="timestamp" with-timezone="true"/>
+	</column>
+	<column name="record_status_key">
+		<type name="smallint"/>
+	</column>
+	<constraint name="products_product_id" type="pk-constr" table="public.configurations">
+		<columns names="contact_type_id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+</dbmodel>

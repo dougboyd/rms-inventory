@@ -1,0 +1,19 @@
+FROM node:7-alpine
+
+RUN apk add --no-cache git
+
+RUN mkdir -p /opt/rms-inventory/backend
+
+COPY . /opt/rms-inventory/backend
+
+WORKDIR /opt/rms-inventory/backend
+
+RUN yarn
+
+ENV PORT 3001
+
+EXPOSE 3001
+
+VOLUME ["/opt/rms-inventory/backend"]
+
+CMD ["npm", "start"]
